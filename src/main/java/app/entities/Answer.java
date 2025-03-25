@@ -6,11 +6,12 @@ import jakarta.persistence.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-class Answer {
+@Getter
+public class Answer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String text;
+    private String answerText;
     private boolean isCorrect;
 
     @ManyToOne
