@@ -1,5 +1,6 @@
 package app.entities;
 
+import app.dtos.QuestionDTO;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -21,6 +22,12 @@ public class Question {
 
     @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Answer> answers;
+
+    public Question(Question question) {
+    }
+
+    public Question(QuestionDTO questionDTO) {
+    }
 
     public enum DifficultyType{
         EASY, MEDIUM, HARD
