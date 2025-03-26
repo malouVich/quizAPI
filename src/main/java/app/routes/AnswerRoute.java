@@ -13,7 +13,7 @@ public class AnswerRoute {
     protected EndpointGroup getRoutes() {
 
         return () -> {
-            post("/hotel/{id}", answerController::create);
+            post("/answer/{id}", answerController::create);
             get("/", answerController::readAll);
             get("/{id}", answerController::read);
             put("/{id}", answerController::update);
