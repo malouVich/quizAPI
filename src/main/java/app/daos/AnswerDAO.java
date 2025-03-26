@@ -54,13 +54,12 @@ public class AnswerDAO {
     }
 
 
-    public AnswerDTO create(AnswerDTO answerDTO) {
+    public Answer create(Answer answer) {
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
-            Answer answer = new Answer(answerDTO);
             em.persist(answer);
             em.getTransaction().commit();
-            return new AnswerDTO(answer);
+            return answer;
         }
     }
 

@@ -3,6 +3,7 @@ package app.controllers;
 import app.config.HibernateConfig;
 import app.daos.QuestionDAO;
 import app.dtos.QuestionDTO;
+import app.entities.Question;
 import io.javalin.http.Context;
 import jakarta.persistence.EntityManagerFactory;
 
@@ -21,12 +22,12 @@ public class QuestionController {
 
     public void create(Context ctx) {
         // request
-        QuestionDTO jsonRequest = ctx.bodyAsClass(QuestionDTO.class);
+        Question jsonRequest = ctx.bodyAsClass(Question.class);
         // DTO
-        QuestionDTO questionDTO = questionDAO.create(jsonRequest);
+        Question question = questionDAO.create(jsonRequest);
         // response
         ctx.res().setStatus(201);
-        ctx.json(questionDTO, QuestionDTO.class);
+        ctx.json(question, QuestionDTO.class);
     }
 
     public void read(Context ctx)  {

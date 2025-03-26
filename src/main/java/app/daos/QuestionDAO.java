@@ -23,13 +23,12 @@ public class QuestionDAO {
         return instance;
     }
 
-    public QuestionDTO create(QuestionDTO questionDTO) {
+    public Question create(Question question) {
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
-            Question question = new Question(questionDTO);
             em.persist(question);
             em.getTransaction().commit();
-            return new QuestionDTO(question);
+            return new Question(question);
         }
     }
 
