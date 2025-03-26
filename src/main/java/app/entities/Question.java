@@ -4,10 +4,7 @@ import app.dtos.QuestionDTO;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Data
@@ -18,16 +15,17 @@ public class Question {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String questionText;
+
+    @Enumerated(EnumType.STRING)
     private DifficultyType difficultyType;
 
     @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    private Set<Answer> answers;
+    private Set<Answer> answers = new HashSet<>();
 
     public Question(Question question) {
     }
 
     public Question(QuestionDTO questionDTO) {
-        this.id = questionDTO.getId();
         this.questionText = questionDTO.getQuestionText();
         this.difficultyType = questionDTO.getDifficultyType();
     }

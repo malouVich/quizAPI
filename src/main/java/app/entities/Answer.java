@@ -13,15 +13,16 @@ public class Answer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String answerText;
-    private boolean isCorrect;
+    private Boolean isCorrect;
 
     @ManyToOne
     @JoinColumn(name = "question_id", nullable = false)
     private Question question;
 
     public Answer(AnswerDTO answerDTO) {
-        this.id = answerDTO.getAnswerId();
         this.answerText = answerDTO.getAnswerText();
-        this.isCorrect = answerDTO.isCorrect();
+        this.isCorrect = answerDTO.getIsCorrect();
     }
+
+
 }

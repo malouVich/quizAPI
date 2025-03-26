@@ -24,7 +24,6 @@ public class QuestionDTO {
 
 
     public QuestionDTO(Question question){
-        this.id = question.getId();
         this.questionText = question.getQuestionText();
         this.difficultyType = question.getDifficultyType();
         if (question.getAnswers() !=null){

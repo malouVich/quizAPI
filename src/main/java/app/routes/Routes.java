@@ -12,7 +12,7 @@ public class Routes {
     public EndpointGroup getRoutes() {
         return () -> {
                 path("/hotels", questionRoute.getRoutes());
-               // path("/rooms", roomRoute.getRoutes());
+                path("/rooms", answerRoute.getRoutes());
         };
     }
 }

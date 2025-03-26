@@ -1,6 +1,7 @@
 package app.controllers;
 
 import app.config.HibernateConfig;
+import app.daos.AnswerDAO;
 import app.dtos.AnswerDTO;
 import app.dtos.QuestionDTO;
 import io.javalin.http.Context;
@@ -71,8 +72,8 @@ public class AnswerController {
 
     public AnswerDTO validateEntity(Context ctx) {
         return ctx.bodyValidator(AnswerDTO.class)
-                .check(a -> a.getAnswerText() != null && a.getAnswerText() > 0, "No answer text")
-                .check(a -> a.isCorrect() != null, "Not a valid correct answer")
+                .check(a -> a.getAnswerText() != null && !a.getAnswerText().isEmpty() , "No answer text")
+                .check(a -> a.getIsCorrect() != null, "Not a valid correct answer")
                 .get();
     }
 }

@@ -16,13 +16,13 @@ public class AnswerDTO {
     private Integer answerId;
     @JsonProperty("answerText")
     private String answerText;
-    private boolean isCorrect;
+    @JsonProperty("correct")
+    private Boolean isCorrect;
 
 
     public AnswerDTO(Answer answer){
-        this.answerId = answer.getId();
         this.answerText = answer.getAnswerText();
-        this.isCorrect = answer.isCorrect();
+        this.isCorrect = answer.getIsCorrect();
     }
 
     public static List<AnswerDTO> answerDTOList(List<Answer> answers){

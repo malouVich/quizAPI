@@ -9,7 +9,6 @@ import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.TypedQuery;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 @NoArgsConstructor(access = lombok.AccessLevel.PRIVATE)
@@ -72,7 +71,7 @@ public class AnswerDAO {
 
             Answer a = em.find(Answer.class, integer);
             a.setAnswerText(answerDTO.getAnswerText());
-            a.setCorrect(answerDTO.isCorrect());
+            a.setIsCorrect(answerDTO.getIsCorrect());
             Answer mergedAnswer = em.merge(a);
             em.getTransaction().commit();
             return new AnswerDTO(mergedAnswer);
