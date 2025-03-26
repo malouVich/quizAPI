@@ -27,10 +27,21 @@ public class Question {
     }
 
     public Question(QuestionDTO questionDTO) {
+        this.id = questionDTO.getId();
+        this.questionText = questionDTO.getQuestionText();
+        this.difficultyType = questionDTO.getDifficultyType();
     }
 
     public enum DifficultyType{
         EASY, MEDIUM, HARD
+    }
+
+    // Bi-directional relationship
+    public void addAnswer(Answer answer) {
+        if ( answer != null) {
+            this.answers.add(answer);
+            answer.setQuestion(this);
+        }
     }
 
 }

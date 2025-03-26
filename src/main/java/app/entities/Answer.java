@@ -1,4 +1,5 @@
 package app.entities;
+import app.dtos.AnswerDTO;
 import lombok.*;
 import jakarta.persistence.*;
 
@@ -17,4 +18,10 @@ public class Answer {
     @ManyToOne
     @JoinColumn(name = "question_id", nullable = false)
     private Question question;
+
+    public Answer(AnswerDTO answerDTO) {
+        this.id = answerDTO.getAnswerId();
+        this.answerText = answerDTO.getAnswerText();
+        this.isCorrect = answerDTO.isCorrect();
+    }
 }
