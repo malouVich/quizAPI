@@ -13,12 +13,24 @@ public class QuestionDAO {
     private static QuestionDAO instance;
     private static EntityManagerFactory emf;
 
+    private QuestionDAO(){}
+
     public static QuestionDAO getInstance(EntityManagerFactory _emf) {
         if (instance == null) {
             emf = _emf;
             instance = new QuestionDAO();
         }
         return instance;
+    }
+
+    public QuestionDTO create(QuestionDTO questionDTO) {
+        try (EntityManager em = emf.createEntityManager()) {
+            em.getTransaction().begin();
+            Question question = new Question(questionDTO);
+            em.persist(question);
+            em.getTransaction().commit();
+            return new QuestionDTO(question);
+        }
     }
 
     public QuestionDTO read(Integer integer) {
@@ -35,13 +47,36 @@ public class QuestionDAO {
         }
     }
 
-    public QuestionDTO create(QuestionDTO questionDTO) {
+
+    public QuestionDTO update(Integer integer, QuestionDTO questionDTO) {
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
-            Question question = new Question(questionDTO);
-            em.persist(question);
+            Question q = em.find(Question.class, integer);
+            q.setQuestionText(questionDTO.getQuestionText());
+            q.setDifficultyType(questionDTO.getDifficultyType());
+            Question mergedQuestion = em.merge(q);
             em.getTransaction().commit();
-            return new QuestionDTO(question);
+            return mergedQuestion != null ? new QuestionDTO(mergedQuestion) : null;
         }
     }
+
+
+    public void delete(Integer integer) {
+        try (EntityManager em = emf.createEntityManager()) {
+            em.getTransaction().begin();
+            Question question = em.find(Question.class, integer);
+            if (question != null) {
+                em.remove(question);
+            }
+            em.getTransaction().commit();
+        }
+    }
+
+    public boolean validatePrimaryKey(Integer integer) {
+        try (EntityManager em = emf.createEntityManager()) {
+            Question question = em.find(Question.class, integer);
+            return question != null;
+        }
+    }
+
 }

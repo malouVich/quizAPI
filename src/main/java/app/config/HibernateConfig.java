@@ -1,10 +1,10 @@
 package app.config;
 
-import dat.entities.Hotel;
-import dat.entities.Room;
-import dat.security.entities.Role;
-import dat.security.entities.User;
-import dat.utils.Utils;
+import app.entities.Answer;
+import app.entities.Question;
+import app.security.entities.Role;
+import app.security.entities.User;
+import app.utils.Utils;
 import jakarta.persistence.EntityManagerFactory;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -43,8 +43,8 @@ public class HibernateConfig {
 
     // TODO: IMPORTANT: Add Entity classes here for them to be registered with Hibernate
     private static void getAnnotationConfiguration(Configuration configuration) {
-        configuration.addAnnotatedClass(Hotel.class);
-        configuration.addAnnotatedClass(Room.class);
+        configuration.addAnnotatedClass(Question.class);
+        configuration.addAnnotatedClass(Answer.class);
         configuration.addAnnotatedClass(User.class);
         configuration.addAnnotatedClass(Role.class);
     }
@@ -81,7 +81,7 @@ public class HibernateConfig {
     private static Properties setBaseProperties(Properties props) {
         props.put("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
         props.put("hibernate.connection.driver_class", "org.postgresql.Driver");
-        props.put("hibernate.hbm2ddl.auto", "update");
+        props.put("hibernate.hbm2ddl.auto", "create");
         props.put("hibernate.current_session_context_class", "thread");
         props.put("hibernate.show_sql", "true");
         props.put("hibernate.format_sql", "true");

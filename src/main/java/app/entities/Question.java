@@ -20,7 +20,7 @@ public class Question {
     private String questionText;
     private DifficultyType difficultyType;
 
-    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<Answer> answers;
 
     public Question(Question question) {

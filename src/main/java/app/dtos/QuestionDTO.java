@@ -3,6 +3,7 @@ package app.dtos;
 
 import app.entities.Question;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -13,10 +14,12 @@ import java.util.Set;
 @Getter
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class QuestionDTO {
-
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private Integer id;
+    @JsonProperty("question")
     private String questionText;
     private Question.DifficultyType difficultyType;
+    @JsonProperty("options")
     private Set<AnswerDTO> answers = new HashSet<>();
 
 
