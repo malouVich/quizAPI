@@ -3,77 +3,92 @@
     {
       "question": "Hvad er hovedstaden i Danmark?",
       "options": ["A: Stockholm", "B: Oslo", "C: København", "D: Helsinki"],
-      "correct": "C"
+      "correct": "C",
+      "difficulty": "EASY"
     },
     {
       "question": "Hvilket dyr siger 'muh'?",
       "options": ["A: Hund", "B: Kat", "C: Ko", "D: Fugl"],
-      "correct": "C"
+      "correct": "C",
+      "difficulty": "EASY"
     },
     {
       "question": "Hvilken planet er tættest på solen?",
       "options": ["A: Mars", "B: Venus", "C: Merkur", "D: Jupiter"],
-      "correct": "C"
+      "correct": "C",
+      "difficulty": "EASY"
     },
     {
       "question": "Hvad er 7 + 8?",
       "options": ["A: 13", "B: 15", "C: 16", "D: 14"],
-      "correct": "B"
+      "correct": "B",
+      "difficulty": "EASY"
     },
     {
       "question": "Hvilket år startede 2. verdenskrig?",
       "options": ["A: 1914", "B: 1945", "C: 1939", "D: 1923"],
-      "correct": "C"
+      "correct": "C",
+      "difficulty": "MEDIUM"
     },
     {
       "question": "Hvem skrev 'Romeo og Julie'?",
       "options": ["A: H.C. Andersen", "B: William Shakespeare", "C: Ernest Hemingway", "D: Jane Austen"],
-      "correct": "B"
+      "correct": "B",
+      "difficulty": "MEDIUM"
     },
     {
       "question": "Hvad er det kemiske symbol for guld?",
       "options": ["A: Ag", "B: Au", "C: Fe", "D: Pt"],
-      "correct": "B"
+      "correct": "B",
+      "difficulty": "MEDIUM"
     },
     {
       "question": "Hvor mange kontinenter findes der på Jorden?",
       "options": ["A: 5", "B: 6", "C: 7", "D: 8"],
-      "correct": "C"
+      "correct": "C",
+      "difficulty": "MEDIUM"
     },
     {
       "question": "Hvem malede Mona Lisa?",
       "options": ["A: Michelangelo", "B: Leonardo da Vinci", "C: Vincent van Gogh", "D: Pablo Picasso"],
-      "correct": "B"
+      "correct": "B",
+      "difficulty": "MEDIUM"
     },
     {
       "question": "Hvad er hovedstaden i Canada?",
       "options": ["A: Toronto", "B: Vancouver", "C: Ottawa", "D: Montreal"],
-      "correct": "C"
+      "correct": "C",
+      "difficulty": "MEDIUM"
     },
     {
       "question": "Hvilket grundstof har atomnummer 1?",
       "options": ["A: Oxygen", "B: Helium", "C: Hydrogen", "D: Kulstof"],
-      "correct": "C"
+      "correct": "C",
+      "difficulty": "HARD"
     },
     {
       "question": "Hvilket land har den største befolkning?",
       "options": ["A: USA", "B: Indien", "C: Kina", "D: Brasilien"],
-      "correct": "C"
+      "correct": "C",
+      "difficulty": "HARD"
     },
     {
       "question": "Hvilken fysiker formulerede relativitetsteorien?",
       "options": ["A: Isaac Newton", "B: Albert Einstein", "C: Niels Bohr", "D: Marie Curie"],
-      "correct": "B"
+      "correct": "B",
+      "difficulty": "HARD"
     },
     {
       "question": "Hvad er kvadratroden af 144?",
       "options": ["A: 10", "B: 12", "C: 14", "D: 16"],
-      "correct": "B"
+      "correct": "B",
+      "difficulty": "HARD"
     },
     {
       "question": "Hvem skrev 'Krig og Fred'?",
       "options": ["A: Fyodor Dostojevskij", "B: Leo Tolstoj", "C: Anton Tjekhov", "D: Franz Kafka"],
-      "correct": "B"
+      "correct": "B",
+      "difficulty": "HARD"
     }
   ]
 }
