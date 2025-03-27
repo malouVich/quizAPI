@@ -57,7 +57,7 @@ Authorization: Bearer {{jwt_token}}
   }
 
 ### GET request with a header
-GET {{url}}/poem/1
+GET {{url}}/answers/2
 Accept: application/json
 
 ### DELETE
