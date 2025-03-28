@@ -4,6 +4,7 @@ import app.dtos.QuestionDTO;
 import app.entities.Question;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Query;
 import jakarta.persistence.TypedQuery;
 
 import java.util.List;
@@ -27,8 +28,9 @@ public class QuestionDAO {
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
             em.persist(question);
+            em.flush();
             em.getTransaction().commit();
-            return new Question(question);
+            return question;
         }
     }
 
@@ -51,6 +53,10 @@ public class QuestionDAO {
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
             Question q = em.find(Question.class, integer);
+            if(q == null){
+                em.getTransaction().rollback();;
+                return null;
+            }
             q.setQuestionText(questionDTO.getQuestionText());
             q.setDifficultyType(questionDTO.getDifficultyType());
             Question mergedQuestion = em.merge(q);
@@ -65,6 +71,9 @@ public class QuestionDAO {
             em.getTransaction().begin();
             Question question = em.find(Question.class, integer);
             if (question != null) {
+                Query query = em.createQuery("DELETE FROM Answer a WHERE a.question.id = :questionId");
+                query.setParameter("questionId",integer);
+                query.executeUpdate();
                 em.remove(question);
             }
             em.getTransaction().commit();
@@ -77,5 +86,4 @@ public class QuestionDAO {
             return question != null;
         }
     }
-
 }

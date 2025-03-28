@@ -80,5 +80,4 @@ public class QuestionController {
                 .check( q -> q.getDifficultyType() != null, "Question type must be set")
                 .get();
     }
-
 }

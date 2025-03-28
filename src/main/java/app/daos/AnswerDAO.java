@@ -37,6 +37,17 @@ public class AnswerDAO {
         }
     }
 
+    public Answer create(Answer answer) {
+        try (EntityManager em = emf.createEntityManager()) {
+            em.getTransaction().begin();
+            em.persist(answer);
+            em.flush();
+            em.getTransaction().commit();
+            return answer;
+        }finally {
+            emf.close();
+        }
+    }
 
     public AnswerDTO read(Integer integer) {
         try (EntityManager em = emf.createEntityManager()) {
@@ -44,7 +55,6 @@ public class AnswerDAO {
             return answer != null ? new AnswerDTO(answer) : null;
         }
     }
-
 
     public List<AnswerDTO> readAll() {
         try (EntityManager em = emf.createEntityManager()) {
@@ -54,21 +64,14 @@ public class AnswerDAO {
     }
 
 
-    public Answer create(Answer answer) {
-        try (EntityManager em = emf.createEntityManager()) {
-            em.getTransaction().begin();
-            em.persist(answer);
-            em.getTransaction().commit();
-            return answer;
-        }
-    }
-
-
     public AnswerDTO update(Integer integer, AnswerDTO answerDTO) {
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
-
             Answer a = em.find(Answer.class, integer);
+            if(a == null){
+                em.getTransaction().rollback();
+                return null;
+            }
             a.setAnswerText(answerDTO.getAnswerText());
             a.setIsCorrect(answerDTO.getIsCorrect());
             Answer mergedAnswer = em.merge(a);
@@ -76,7 +79,6 @@ public class AnswerDAO {
             return new AnswerDTO(mergedAnswer);
         }
     }
-
 
     public void delete(Integer integer) {
         try (EntityManager em = emf.createEntityManager()) {
@@ -88,7 +90,6 @@ public class AnswerDAO {
             em.getTransaction().commit();
         }
     }
-
 
     public boolean validatePrimaryKey(Integer integer) {
         try (EntityManager em = emf.createEntityManager()) {

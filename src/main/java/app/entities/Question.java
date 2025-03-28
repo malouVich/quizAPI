@@ -1,6 +1,7 @@
 package app.entities;
 
 import app.dtos.QuestionDTO;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -16,6 +17,8 @@ public class Question {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @JsonProperty("question")
     private String questionText;
 
     @Enumerated(EnumType.STRING)
@@ -43,5 +46,4 @@ public class Question {
             answer.setQuestion(this);
         }
     }
-
 }

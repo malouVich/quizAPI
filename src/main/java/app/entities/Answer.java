@@ -24,6 +24,4 @@ public class Answer {
         this.answerText = answerDTO.getAnswerText();
         this.isCorrect = answerDTO.getIsCorrect();
     }
-
-
 }

@@ -21,6 +21,7 @@ public class AnswerDTO {
 
 
     public AnswerDTO(Answer answer){
+        this.answerId = answer.getId();
         this.answerText = answer.getAnswerText();
         this.isCorrect = answer.getIsCorrect();
     }
