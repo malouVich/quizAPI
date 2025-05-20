@@ -14,8 +14,8 @@ public class QuestionRoute {
     protected EndpointGroup getRoutes() {
 
         return () -> {
-            post("/", questionController::create, Role.USER);
-            get("/", questionController::readAll, Role.USER);
+            post("/", questionController::create, Role.ANYONE);
+            get("/", questionController::readAll, Role.ANYONE);
             get("/{id}", questionController::read);
             put("/{id}", questionController::update);
             delete("/{id}", questionController::delete);
