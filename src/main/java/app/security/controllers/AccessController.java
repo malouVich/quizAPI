@@ -19,29 +19,37 @@ public class AccessController implements IAccessController {
 
     /**
      * This method checks if the user has the necessary roles to access the route.
+     *
      * @param ctx
      */
     public void accessHandler(Context ctx) {
 
-        // If no roles are specified on the endpoint, then anyone can access the route
-        if (ctx.routeRoles().isEmpty() || ctx.routeRoles().contains(Role.ANYONE)){
-           return;
+        Set<RouteRole> allowedRoles = ctx.routeRoles();
+
+        // Hvis ingen roller er krævet, tillad adgang
+        if (allowedRoles.isEmpty() || allowedRoles.contains(Role.ANYONE)) {
+            return;
         }
 
-        // Check if the user is authenticated
+        // Forsøg at autentificere brugeren
         try {
             securityController.authenticate().handle(ctx);
         } catch (UnauthorizedResponse e) {
             throw new UnauthorizedResponse(e.getMessage());
         } catch (Exception e) {
-            throw new UnauthorizedResponse("You need to log in, dude! Or you token is invalid.");
+            throw new UnauthorizedResponse("You need to log in, dude! Or your token is invalid.");
         }
 
-        // Check if the user has the necessary roles to access the route
+        // Hent brugerinfo sat i authenticate()
         UserDTO user = ctx.attribute("user");
-        Set<RouteRole> allowedRoles = ctx.routeRoles(); // roles allowed for the current route
+        if (user == null) {
+            throw new UnauthorizedResponse("No user found in context after authentication");
+        }
+
+        // Tjek roller
         if (!securityController.authorize(user, allowedRoles)) {
-            throw new UnauthorizedResponse("Unauthorized with roles: " + user.getRoles() + ". Needed roles are: " + allowedRoles);
+            throw new UnauthorizedResponse("You are not authorized. Your roles: "
+                    + user.getRoles() + ", required: " + allowedRoles);
         }
     }
 }
