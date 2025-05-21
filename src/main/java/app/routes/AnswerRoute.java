@@ -1,6 +1,7 @@
 package app.routes;
 
 import app.controllers.AnswerController;
+import app.security.enums.Role;
 import io.javalin.apibuilder.EndpointGroup;
 
 import static io.javalin.apibuilder.ApiBuilder.*;
@@ -13,11 +14,11 @@ public class AnswerRoute {
     protected EndpointGroup getRoutes() {
 
         return () -> {
-            post("/answer/{id}", answerController::create);
-            get("/", answerController::readAll);
-            get("/{id}", answerController::read);
-            put("/{id}", answerController::update);
-            delete("/{id}", answerController::delete);
+            post("/answer/{id}", answerController::create, Role.ANYONE);
+            get("/", answerController::readAll, Role.ANYONE);
+            get("/{id}", answerController::read, Role.ANYONE);
+            put("/{id}", answerController::update, Role.ANYONE);
+            delete("/{id}", answerController::delete, Role.ANYONE);
         };
     }
 }
