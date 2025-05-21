@@ -58,7 +58,7 @@ public class HibernateConfig {
             if (forTest) {
                 props = setTestProperties(props);
             } else if (System.getenv("DEPLOYED") != null) {
-                setDeployedProperties(props);
+                props=setDeployedProperties(props);
             } else {
                 props = setDevProperties(props);
             }
