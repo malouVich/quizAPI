@@ -15,7 +15,7 @@ public class QuestionRoute {
 
         return () -> {
             post("/", questionController::create);
-            get("/re", questionController::readAll);
+            get("/", questionController::readAll);
             get("/{id}", questionController::read);
             put("/{id}", questionController::update);
             delete("/{id}", questionController::delete);
