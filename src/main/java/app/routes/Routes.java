@@ -13,7 +13,7 @@ public class Routes {
 
     public EndpointGroup getRoutes() {
         return () -> {
-                path("/quiz", questionRoute.getRoutes());
+                path("/game", questionRoute.getRoutes());
                 path("/answers", answerRoute.getRoutes());
         };
     }
