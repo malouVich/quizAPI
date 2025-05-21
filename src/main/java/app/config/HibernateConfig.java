@@ -5,7 +5,6 @@ import app.entities.Question;
 import app.security.entities.Role;
 import app.security.entities.User;
 import app.utils.Utils;
-import io.github.cdimascio.dotenv.Dotenv;
 import jakarta.persistence.EntityManagerFactory;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -91,13 +90,10 @@ public class HibernateConfig {
     }
 
     private static Properties setDeployedProperties(Properties props) {
-        Dotenv dotenv = Dotenv.load();
-
-        String DBName = dotenv.get("DB_NAME");
-        props.setProperty("hibernate.connection.url", dotenv.get("CONNECTION_STR") + DBName);
-        props.setProperty("hibernate.connection.username", dotenv.get("DB_USERNAME"));
-        props.setProperty("hibernate.connection.password", dotenv.get("DB_PASSWORD"));
-
+        String DBName = System.getenv("DB_NAME");
+        props.setProperty("hibernate.connection.url", System.getenv("CONNECTION_STR") + DBName);
+        props.setProperty("hibernate.connection.username", System.getenv("DB_USERNAME"));
+        props.setProperty("hibernate.connection.password", System.getenv("DB_PASSWORD"));
         return props;
     }
 
