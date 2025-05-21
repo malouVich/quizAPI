@@ -99,9 +99,19 @@ public class HibernateConfig {
         System.out.println("DEBUG: CONNECTION_STR = " + connectionStr);
         System.out.println("DEBUG: DB_NAME = " + dbName);
         System.out.println("DEBUG: USERNAME = " + username);
-        System.out.println("DEBUG: FINAL JDBC = " + connectionStr + dbName);
 
-        props.setProperty("hibernate.connection.url", connectionStr + dbName);
+        if (connectionStr == null) connectionStr = "";
+        if (dbName == null) dbName = "";
+
+        // Ensure connectionStr ends with a slash or separator before dbName
+        if (!connectionStr.endsWith("/")) {
+            connectionStr += "/";
+        }
+
+        String jdbcUrl = connectionStr + dbName;
+        System.out.println("DEBUG: FINAL JDBC = " + jdbcUrl);
+
+        props.setProperty("hibernate.connection.url", jdbcUrl);
         props.setProperty("hibernate.connection.username", username);
         props.setProperty("hibernate.connection.password", password);
         return props;
