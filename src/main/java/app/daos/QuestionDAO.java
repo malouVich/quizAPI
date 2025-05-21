@@ -1,6 +1,7 @@
 package app.daos;
 
 import app.dtos.QuestionDTO;
+import app.entities.Answer;
 import app.entities.Question;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -27,12 +28,20 @@ public class QuestionDAO {
     public Question create(Question question) {
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
+
+            if (question.getAnswers() != null) {
+                for (Answer answer : question.getAnswers()) {
+                    answer.setQuestion(question);
+                }
+            }
+
             em.persist(question);
             em.flush();
             em.getTransaction().commit();
             return question;
         }
     }
+
 
     public QuestionDTO read(Integer integer) {
         try (EntityManager em = emf.createEntityManager()) {

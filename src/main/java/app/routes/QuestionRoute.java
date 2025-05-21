@@ -14,11 +14,11 @@ public class QuestionRoute {
     protected EndpointGroup getRoutes() {
 
         return () -> {
-            post("/", questionController::create);
-            get("/", questionController::readAll);
-            get("/{id}", questionController::read);
-            put("/{id}", questionController::update);
-            delete("/{id}", questionController::delete);
+            post("/questions/{id}", questionController::create, Role.ANYONE);
+            get("/", questionController::readAll, Role.ANYONE);
+            get("/{id}", questionController::read, Role.ANYONE);
+            put("/{id}", questionController::update, Role.ANYONE);
+            delete("/{id}", questionController::delete, Role.ANYONE);
         };
     }
 }
