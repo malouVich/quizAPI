@@ -62,6 +62,7 @@ public class HibernateConfig {
             } else {
                 props = setDevProperties(props);
             }
+            System.out.println("FINAL JDBC URL: " + props.getProperty("hibernate.connection.url"));
             configuration.setProperties(props);
             getAnnotationConfiguration(configuration);
 
@@ -90,11 +91,34 @@ public class HibernateConfig {
     }
 
 
+//    private static Properties setDeployedProperties(Properties props) {
+//        props.setProperty("hibernate.connection.driver_class", "org.postgresql.Driver");
+//        String DBName = System.getenv("DB_NAME");
+//        props.setProperty("hibernate.connection.url", System.getenv("CONNECTION_STR") + DBName);
+//        props.setProperty("hibernate.connection.username", System.getenv("DB_USERNAME"));
+//        props.setProperty("hibernate.connection.password", System.getenv("DB_PASSWORD"));
+//        System.out.println("CONNECTION_STR: " + System.getenv("CONNECTION_STR"));
+//        System.out.println("DB_NAME: " + DBName);
+//
+//        return props;
+//    }
+
     private static Properties setDeployedProperties(Properties props) {
+        String connectionStr = System.getenv("CONNECTION_STR");
         String DBName = System.getenv("DB_NAME");
-        props.setProperty("hibernate.connection.url", System.getenv("CONNECTION_STR") + DBName);
-        props.setProperty("hibernate.connection.username", System.getenv("DB_USERNAME"));
-        props.setProperty("hibernate.connection.password", System.getenv("DB_PASSWORD"));
+        String username = System.getenv("DB_USERNAME");
+        String password = System.getenv("DB_PASSWORD");
+
+        // Debug-udskrifter for at bekræfte indholdet
+        System.out.println("CONNECTION_STR: " + connectionStr);
+        System.out.println("DB_NAME: " + DBName);
+        System.out.println("FINAL JDBC URL: " + connectionStr + DBName);
+
+        props.setProperty("hibernate.connection.driver_class", "org.postgresql.Driver");
+        props.setProperty("hibernate.connection.url", connectionStr + DBName);
+        props.setProperty("hibernate.connection.username", username);
+        props.setProperty("hibernate.connection.password", password);
+
         return props;
     }
 
