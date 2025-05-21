@@ -91,12 +91,22 @@ public class HibernateConfig {
 
 
     private static Properties setDeployedProperties(Properties props) {
-        String DBName = System.getenv("DB_NAME");
-        props.setProperty("hibernate.connection.url", System.getenv("CONNECTION_STR") + DBName);
-        props.setProperty("hibernate.connection.username", System.getenv("DB_USERNAME"));
-        props.setProperty("hibernate.connection.password", System.getenv("DB_PASSWORD"));
+        String connectionStr = System.getenv("CONNECTION_STR");
+        String dbName = System.getenv("DB_NAME");
+        String username = System.getenv("DB_USERNAME");
+        String password = System.getenv("DB_PASSWORD");
+
+        System.out.println("DEBUG: CONNECTION_STR = " + connectionStr);
+        System.out.println("DEBUG: DB_NAME = " + dbName);
+        System.out.println("DEBUG: USERNAME = " + username);
+        System.out.println("DEBUG: FINAL JDBC = " + connectionStr + dbName);
+
+        props.setProperty("hibernate.connection.url", connectionStr + dbName);
+        props.setProperty("hibernate.connection.username", username);
+        props.setProperty("hibernate.connection.password", password);
         return props;
     }
+
 
 
     private static Properties setDevProperties(Properties props) {
