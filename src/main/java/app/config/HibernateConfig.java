@@ -91,29 +91,10 @@ public class HibernateConfig {
 
 
     private static Properties setDeployedProperties(Properties props) {
-        String connectionStr = System.getenv("CONNECTION_STR");
-        String dbName = System.getenv("DB_NAME");
-        String username = System.getenv("DB_USERNAME");
-        String password = System.getenv("DB_PASSWORD");
-
-        System.out.println("DEBUG: CONNECTION_STR = " + connectionStr);
-        System.out.println("DEBUG: DB_NAME = " + dbName);
-        System.out.println("DEBUG: USERNAME = " + username);
-
-        if (connectionStr == null) connectionStr = "";
-        if (dbName == null) dbName = "";
-
-        // Ensure connectionStr ends with a slash or separator before dbName
-        if (!connectionStr.endsWith("/")) {
-            connectionStr += "/";
-        }
-
-        String jdbcUrl = connectionStr + dbName;
-        System.out.println("DEBUG: FINAL JDBC = " + jdbcUrl);
-
-        props.setProperty("hibernate.connection.url", jdbcUrl);
-        props.setProperty("hibernate.connection.username", username);
-        props.setProperty("hibernate.connection.password", password);
+        String DBName = System.getenv("QUIZ_DB_NAME");
+        props.setProperty("hibernate.connection.url", System.getenv("CONNECTION_STR") + DBName);
+        props.setProperty("hibernate.connection.username", System.getenv("DB_USERNAME"));
+        props.setProperty("hibernate.connection.password", System.getenv("DB_PASSWORD"));
         return props;
     }
 
