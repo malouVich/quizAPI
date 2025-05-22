@@ -3,330 +3,150 @@
     "question": "Hvad er hovedstaden i Danmark?",
     "difficultyType": "EASY",
     "options": [
-      {
-        "answerText": "A: Stockholm",
-        "correct": false
-      },
-      {
-        "answerText": "B: Oslo",
-        "correct": false
-      },
-      {
-        "answerText": "C: København",
-        "correct": true
-      },
-      {
-        "answerText": "D: Helsinki",
-        "correct": false
-      }
+      { "answerText": "A: Stockholm", "correct": false },
+      { "answerText": "B: Oslo", "correct": false },
+      { "answerText": "C: København", "correct": true },
+      { "answerText": "D: Helsinki", "correct": false }
     ]
   },
   {
     "question": "Hvilket dyr siger 'muh'?",
     "difficultyType": "EASY",
     "options": [
-      {
-        "answerText": "A: Hund",
-        "correct": false
-      },
-      {
-        "answerText": "B: Kat",
-        "correct": false
-      },
-      {
-        "answerText": "C: Ko",
-        "correct": true
-      },
-      {
-        "answerText": "D: Fugl",
-        "correct": false
-      }
-    ]
-  },
-  {
-    "question": "Hvilken planet er tættest på solen?",
-    "difficultyType": "MEDIUM",
-    "options": [
-      {
-        "answerText": "A: Mars",
-        "correct": false
-      },
-      {
-        "answerText": "B: Venus",
-        "correct": false
-      },
-      {
-        "answerText": "C: Merkur",
-        "correct": true
-      },
-      {
-        "answerText": "D: Jupiter",
-        "correct": false
-      }
+      { "answerText": "A: Hund", "correct": false },
+      { "answerText": "B: Kat", "correct": false },
+      { "answerText": "C: Ko", "correct": true },
+      { "answerText": "D: Fugl", "correct": false }
     ]
   },
   {
     "question": "Hvad er 7 + 8?",
     "difficultyType": "EASY",
     "options": [
-      {
-        "answerText": "A: 13",
-        "correct": false
-      },
-      {
-        "answerText": "B: 15",
-        "correct": true
-      },
-      {
-        "answerText": "C: 16",
-        "correct": false
-      },
-      {
-        "answerText": "D: 14",
-        "correct": false
-      }
-    ]
-  },
-  {
-    "question": "Hvilket år startede 2. verdenskrig?",
-    "difficultyType": "HARD",
-    "options": [
-      {
-        "answerText": "A: 1914",
-        "correct": false
-      },
-      {
-        "answerText": "B: 1945",
-        "correct": false
-      },
-      {
-        "answerText": "C: 1939",
-        "correct": true
-      },
-      {
-        "answerText": "D: 1923",
-        "correct": false
-      }
-    ]
-  },
-  {
-    "question": "Hvem skrev 'Romeo og Julie'?",
-    "difficultyType": "MEDIUM",
-    "options": [
-      {
-        "answerText": "A: H.C. Andersen",
-        "correct": false
-      },
-      {
-        "answerText": "B: William Shakespeare",
-        "correct": true
-      },
-      {
-        "answerText": "C: Ernest Hemingway",
-        "correct": false
-      },
-      {
-        "answerText": "D: Jane Austen",
-        "correct": false
-      }
-    ]
-  },
-  {
-    "question": "Hvad er det kemiske symbol for guld?",
-    "difficultyType": "MEDIUM",
-    "options": [
-      {
-        "answerText": "A: Ag",
-        "correct": false
-      },
-      {
-        "answerText": "B: Au",
-        "correct": true
-      },
-      {
-        "answerText": "C: Fe",
-        "correct": false
-      },
-      {
-        "answerText": "D: Pt",
-        "correct": false
-      }
+      { "answerText": "A: 13", "correct": false },
+      { "answerText": "B: 15", "correct": true },
+      { "answerText": "C: 16", "correct": false },
+      { "answerText": "D: 14", "correct": false }
     ]
   },
   {
     "question": "Hvor mange kontinenter findes der på Jorden?",
     "difficultyType": "EASY",
     "options": [
-      {
-        "answerText": "A: 5",
-        "correct": false
-      },
-      {
-        "answerText": "B: 6",
-        "correct": false
-      },
-      {
-        "answerText": "C: 7",
-        "correct": true
-      },
-      {
-        "answerText": "D: 8",
-        "correct": false
-      }
-    ]
-  },
-  {
-    "question": "Hvem malede Mona Lisa?",
-    "difficultyType": "MEDIUM",
-    "options": [
-      {
-        "answerText": "A: Michelangelo",
-        "correct": false
-      },
-      {
-        "answerText": "B: Leonardo da Vinci",
-        "correct": true
-      },
-      {
-        "answerText": "C: Vincent van Gogh",
-        "correct": false
-      },
-      {
-        "answerText": "D: Pablo Picasso",
-        "correct": false
-      }
+      { "answerText": "A: 5", "correct": false },
+      { "answerText": "B: 6", "correct": false },
+      { "answerText": "C: 7", "correct": true },
+      { "answerText": "D: 8", "correct": false }
     ]
   },
   {
     "question": "Hvad er hovedstaden i Canada?",
     "difficultyType": "EASY",
     "options": [
-      {
-        "answerText": "A: Toronto",
-        "correct": false
-      },
-      {
-        "answerText": "B: Vancouver",
-        "correct": false
-      },
-      {
-        "answerText": "C: Ottawa",
-        "correct": true
-      },
-      {
-        "answerText": "D: Montreal",
-        "correct": false
-      }
+      { "answerText": "A: Toronto", "correct": false },
+      { "answerText": "B: Vancouver", "correct": false },
+      { "answerText": "C: Ottawa", "correct": true },
+      { "answerText": "D: Montreal", "correct": false }
     ]
   },
   {
     "question": "Hvilket grundstof har atomnummer 1?",
     "difficultyType": "EASY",
     "options": [
-      {
-        "answerText": "A: Oxygen",
-        "correct": false
-      },
-      {
-        "answerText": "B: Helium",
-        "correct": false
-      },
-      {
-        "answerText": "C: Hydrogen",
-        "correct": true
-      },
-      {
-        "answerText": "D: Kulstof",
-        "correct": false
-      }
+      { "answerText": "A: Oxygen", "correct": false },
+      { "answerText": "B: Helium", "correct": false },
+      { "answerText": "C: Hydrogen", "correct": true },
+      { "answerText": "D: Kulstof", "correct": false }
+    ]
+  },
+  {
+    "question": "Hvilken planet er tættest på solen?",
+    "difficultyType": "MEDIUM",
+    "options": [
+      { "answerText": "A: Mars", "correct": false },
+      { "answerText": "B: Venus", "correct": false },
+      { "answerText": "C: Merkur", "correct": true },
+      { "answerText": "D: Jupiter", "correct": false }
+    ]
+  },
+  {
+    "question": "Hvem skrev 'Romeo og Julie'?",
+    "difficultyType": "MEDIUM",
+    "options": [
+      { "answerText": "A: H.C. Andersen", "correct": false },
+      { "answerText": "B: William Shakespeare", "correct": true },
+      { "answerText": "C: Ernest Hemingway", "correct": false },
+      { "answerText": "D: Jane Austen", "correct": false }
+    ]
+  },
+  {
+    "question": "Hvad er det kemiske symbol for guld?",
+    "difficultyType": "MEDIUM",
+    "options": [
+      { "answerText": "A: Ag", "correct": false },
+      { "answerText": "B: Au", "correct": true },
+      { "answerText": "C: Fe", "correct": false },
+      { "answerText": "D: Pt", "correct": false }
+    ]
+  },
+  {
+    "question": "Hvem malede Mona Lisa?",
+    "difficultyType": "MEDIUM",
+    "options": [
+      { "answerText": "A: Michelangelo", "correct": false },
+      { "answerText": "B: Leonardo da Vinci", "correct": true },
+      { "answerText": "C: Vincent van Gogh", "correct": false },
+      { "answerText": "D: Pablo Picasso", "correct": false }
     ]
   },
   {
     "question": "Hvilket land har den største befolkning?",
     "difficultyType": "MEDIUM",
     "options": [
-      {
-        "answerText": "A: USA",
-        "correct": false
-      },
-      {
-        "answerText": "B: Indien",
-        "correct": false
-      },
-      {
-        "answerText": "C: Kina",
-        "correct": true
-      },
-      {
-        "answerText": "D: Brasilien",
-        "correct": false
-      }
-    ]
-  },
-  {
-    "question": "Hvilken fysiker formulerede relativitetsteorien?",
-    "difficultyType": "HARD",
-    "options": [
-      {
-        "answerText": "A: Isaac Newton",
-        "correct": false
-      },
-      {
-        "answerText": "B: Albert Einstein",
-        "correct": true
-      },
-      {
-        "answerText": "C: Niels Bohr",
-        "correct": false
-      },
-      {
-        "answerText": "D: Marie Curie",
-        "correct": false
-      }
+      { "answerText": "A: USA", "correct": false },
+      { "answerText": "B: Indien", "correct": false },
+      { "answerText": "C: Kina", "correct": true },
+      { "answerText": "D: Brasilien", "correct": false }
     ]
   },
   {
     "question": "Hvad er kvadratroden af 144?",
     "difficultyType": "MEDIUM",
     "options": [
-      {
-        "answerText": "A: 10",
-        "correct": false
-      },
-      {
-        "answerText": "B: 12",
-        "correct": true
-      },
-      {
-        "answerText": "C: 14",
-        "correct": false
-      },
-      {
-        "answerText": "D: 16",
-        "correct": false
-      }
+      { "answerText": "A: 10", "correct": false },
+      { "answerText": "B: 12", "correct": true },
+      { "answerText": "C: 14", "correct": false },
+      { "answerText": "D: 16", "correct": false }
+    ]
+  },
+  {
+    "question": "Hvilket år startede 2. verdenskrig?",
+    "difficultyType": "HARD",
+    "options": [
+      { "answerText": "A: 1914", "correct": false },
+      { "answerText": "B: 1945", "correct": false },
+      { "answerText": "C: 1939", "correct": true },
+      { "answerText": "D: 1923", "correct": false }
+    ]
+  },
+  {
+    "question": "Hvilken fysiker formulerede relativitetsteorien?",
+    "difficultyType": "HARD",
+    "options": [
+      { "answerText": "A: Isaac Newton", "correct": false },
+      { "answerText": "B: Albert Einstein", "correct": true },
+      { "answerText": "C: Niels Bohr", "correct": false },
+      { "answerText": "D: Marie Curie", "correct": false }
     ]
   },
   {
     "question": "Hvem skrev 'Krig og Fred'?",
     "difficultyType": "HARD",
     "options": [
-      {
-        "answerText": "A: Fyodor Dostojevskij",
-        "correct": false
-      },
-      {
-        "answerText": "B: Leo Tolstoj",
-        "correct": true
-      },
-      {
-        "answerText": "C: Anton Tjekhov",
-        "correct": false
-      },
-      {
-        "answerText": "D: Franz Kafka",
-        "correct": false
-      }
+      { "answerText": "A: Fyodor Dostojevskij", "correct": false },
+      { "answerText": "B: Leo Tolstoj", "correct": true },
+      { "answerText": "C: Anton Tjekhov", "correct": false },
+      { "answerText": "D: Franz Kafka", "correct": false }
     ]
   }
 ]

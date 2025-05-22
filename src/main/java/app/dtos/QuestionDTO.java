@@ -8,7 +8,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @NoArgsConstructor
 @Getter
@@ -20,15 +22,18 @@ public class QuestionDTO {
     private String questionText;
     private Question.DifficultyType difficultyType;
     @JsonProperty("options")
-    private Set<AnswerDTO> answers = new HashSet<>();
+    private List<AnswerDTO> answers;
 
 
     public QuestionDTO(Question question){
         this.id = question.getId();
         this.questionText = question.getQuestionText();
         this.difficultyType = question.getDifficultyType();
-        if (question.getAnswers() !=null){
-            question.getAnswers().forEach(answer -> answers.add(new AnswerDTO(answer)));
+        if (question.getAnswers() != null) {
+            this.answers = question.getAnswers()
+                    .stream()
+                    .map(AnswerDTO::new)
+                    .collect(Collectors.toList());
         }
     }
 }

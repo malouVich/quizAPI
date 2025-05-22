@@ -52,10 +52,15 @@ public class QuestionDAO {
 
     public List<QuestionDTO> readAll() {
         try (EntityManager em = emf.createEntityManager()) {
-            TypedQuery<QuestionDTO> query = em.createQuery("SELECT new app.dtos.QuestionDTO(q) FROM Question q", QuestionDTO.class);
-            return query.getResultList();
+            TypedQuery<Question> query = em.createQuery(
+                    "SELECT DISTINCT q FROM Question q LEFT JOIN FETCH q.answers ORDER BY q.id",
+                    Question.class
+            );
+            List<Question> questions = query.getResultList();
+            return questions.stream().map(QuestionDTO::new).toList();
         }
     }
+
 
 
     public QuestionDTO update(Integer integer, QuestionDTO questionDTO) {

@@ -25,7 +25,7 @@ public class Question {
     private DifficultyType difficultyType;
 
     @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    private Set<Answer> answers = new HashSet<>();
+    private List<Answer> answers = new ArrayList<>();
 
     public Question(Question question) {
     }
